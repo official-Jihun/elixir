@@ -9,6 +9,7 @@
                         'Elixir.Perm','Elixir.Pingpong',
                         'Elixir.Queue.Supervisor','Elixir.SimpleQueue',
                         'Elixir.TipApps','Elixir.TipApps.FilterIn',
+                        'Elixir.TipApps.FilterInNested',
                         'Elixir.TipApps.FilterOut','Elixir.WaitingProcess',
                         'Elixir.WebClient','Elixir.ZipKey']},
               {registered,[]},

@@ -1,6 +1,6 @@
 defmodule TipApps.FilterIn do
     @moduledoc """
-        Header와 Token 사이의 내용을 삭제 한다.
+        Header와 Token 사이의 내용을 가져온다.
     """
 
     require Logger
@@ -16,12 +16,6 @@ defmodule TipApps.FilterIn do
         end
     end
 
-    def getContent(str,tail) do
-        case String.split(str, tail, parts: 2) do
-            [_] -> ""
-            [content, remain] -> {content, remain}
-        end
-    end
 
     def filterIn("",_head,_tail) do
         ""
