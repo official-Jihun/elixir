@@ -1,10 +1,10 @@
 defmodule Beacon do
-    
+
 
     def proc do
         Process.sleep 2000
         IO.puts "I'm HERE.... : #{inspect self()}"
-        proc
+        proc()
     end
 
 
