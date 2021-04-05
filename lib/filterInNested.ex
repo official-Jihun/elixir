@@ -24,25 +24,19 @@ defmodule TipApps.FilterInNested do
 
     def filterIn(str,head,tail) do
         if(String.contains?(str, [head,tail])) do
-            content = getFront(str,head)
-            case String.split(content, tail, parts: 2) do
-                [content, remain]-> content <> filterIn(remain,head,tail)
-                [_]->content
+            context = getFront(str,head)
+            case String.split(context, tail, parts: 2) do
+                [content, remain]-> IO.puts([content, remain, head, tail])
+                    #content <> filterIn(remain,head,tail)
+                [content]->content
             end
         end
     end
 
     def test do
-        IO.puts filterIn("abc()"  , "(" , ")"     )
+        #IO.puts filterIn("abc()"  , "(" , ")"     )
         IO.puts filterIn("()abc"  , "(" , ")"      )
-        IO.puts filterIn("abc()abc()"  , "(" , ")" )
-        IO.puts filterIn("abc()abc()abc"  , "(" , ")" )
-        IO.puts filterIn("abc(abc)abc()abc"  , "(" , ")" )
-        IO.puts filterIn("abc(abc"  , "(" , ")" )
-        IO.puts filterIn("abc((abc()"  , "(" , ")" )
-        IO.puts filterIn("abc(ab)"  , "(" , ")" )
-        IO.puts filterIn("abc(ab)(abcc)ab"  , "(" , ")" )
-        IO.puts filterIn("(abc)(abab)(ab"  , "(" , ")" )
+
     end
 
 end

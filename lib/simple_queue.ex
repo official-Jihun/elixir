@@ -17,6 +17,7 @@ defmodule SimpleQueue do
     def handle_call(:dequeue, _, []), do: {:reply, nil, []}
 
     def handle_call(:queue, from, state) do
+      Process.sleep(10_000)
       IO.puts "caller : #{inspect from} , state : #{inspect state}"
       {:reply, state, state}
     end
